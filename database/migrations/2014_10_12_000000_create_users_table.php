@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('idUsuario', true)->unsigned();
             $table->string('CPF')->unique('CPF');
             $table->integer('enderecoId')->unsined();
-            $table->foreign('enderecoId')->references('idEndereco')->on('enderecos');
+            $table->foreign('enderecoId')->references('idEndereco')->on('addresses');
             $table->string('dataNascimento')->nullable();
             $table->string('email')->unique('email');
             $table->string('nome')->nullable();

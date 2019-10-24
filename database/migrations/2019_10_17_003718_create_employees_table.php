@@ -15,7 +15,7 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->unsignedInteger('usuarioId');
-            $table->foreign('usuarioId')->references('idUsuario')->on('usuarios');
+            $table->foreign('usuarioId')->references('idUsuario')->on('users');
             $table->string('cargo', 30)->nullable();
         });
     }

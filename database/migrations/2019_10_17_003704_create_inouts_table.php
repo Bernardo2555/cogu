@@ -16,9 +16,9 @@ class CreateInoutsTable extends Migration
         Schema::create('inouts', function (Blueprint $table) {
             $table->integer('idES', true)->unsigned();
             $table->integer('produtoId')->unsined();
-            $table->foreign('produtoId')->references('idProduto')->on('produto');
+            $table->foreign('produtoId')->references('idProduto')->on('products');
             $table->integer('funcionarioId')->unsined();
-            $table->foreign('funcionarioId')->references('idUsuario')->on('usuario');
+            $table->foreign('funcionarioId')->references('idUsuario')->on('users');
             $table->string('validade')->nullable();
             $table->float('quantidade', 10, 0)->nullable();
             $table->string('dataColheita')->nullable();

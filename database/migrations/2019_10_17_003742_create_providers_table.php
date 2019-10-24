@@ -16,7 +16,7 @@ class CreateProvidersTable extends Migration
         Schema::create('providers', function (Blueprint $table) {
             $table->integer('idFornecedor', true)->unsigned();
             $table->integer('enderecoId')->unsigned();
-            $table->foreign('enderecoId')->references('idEndereco')->on('enderecos');
+            $table->foreign('enderecoId')->references('idEndereco')->on('addresses');
             $table->string('nomeFantasia', 100)->nullable();
             $table->string('nomeVendedor', 100)->nullable();
             $table->string('contato', 50)->nullable();
