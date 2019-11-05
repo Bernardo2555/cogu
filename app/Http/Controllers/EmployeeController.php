@@ -46,10 +46,12 @@ class EmployeeController extends Controller
             );
             $usuario = new User($dados);
             $usuario->endereco()->associate($endereco);
-            $usuario->save();
+
             if ($req->input('Gerente') == 'on') {
                 $usuario->assignRole('gerente');
             }
+
+            $usuario->save();
 
             return redirect()->back()->with('alert-success', 'Funcionário cadastrado com sucesso!');
         } catch (\Exception $e) {

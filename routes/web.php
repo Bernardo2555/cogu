@@ -37,4 +37,3 @@ Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->n
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('resetar.senha')->middleware('auth');
 
 Auth::routes();
-//so merda
