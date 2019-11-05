@@ -14,8 +14,8 @@ class CreateOutboundsuppliersTable extends Migration
     public function up()
     {
         Schema::create('outboundsuppliers', function (Blueprint $table) {
-            $table->unsignedInteger('entrada_saidas_idES')->unsined();
-            $table->unsignedInteger('fornecedor_idFornecedor')-> unsined();
+            $table->integer('entrada_saidas_idES')->unsined();
+            $table->integer('fornecedor_idFornecedor')-> unsined();
             $table->foreign('entrada_saidas_idES')->references('idES')->on('inouts');
             $table->foreign('fornecedor_idFornecedor')->references('idFornecedor')->on('providers');
         });
