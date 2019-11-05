@@ -14,7 +14,7 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->integer('usuarioId')->unsined();
+            $table->unsignedBigInteger('usuarioId')->unsined();
             $table->foreign('usuarioId')->references('idUsuario')->on('users');
             $table->string('cargo', 30)->nullable();
         });

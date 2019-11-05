@@ -14,10 +14,10 @@ class CreateInoutsTable extends Migration
     public function up()
     {
         Schema::create('inouts', function (Blueprint $table) {
-            $table->integer('idES', true)->unsigned();
-            $table->integer('produtoId')->unsined();
+            $table->bigIncrements('idES')->unsigned();
+            $table->unsignedBigInteger('produtoId')->unsined();
             $table->foreign('produtoId')->references('idProduto')->on('products');
-            $table->integer('funcionarioId')->unsined();
+            $table->unsignedBigInteger('funcionarioId')->unsined();
             $table->foreign('funcionarioId')->references('idUsuario')->on('users');
             $table->string('validade')->nullable();
             $table->float('quantidade', 10, 0)->nullable();
