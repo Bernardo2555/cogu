@@ -82,8 +82,8 @@
                                                                        for="Número"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="Numero" name="Numero" type="number"
-                                                                           placeholder="Numero"
-                                                                           class="form-control input-md" required="">
+                                                                           placeholder="Número"
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
@@ -200,7 +200,7 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Número" name="Número" type="number"
                                                                            placeholder="Número"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
