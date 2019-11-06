@@ -89,17 +89,6 @@
 
                                             <!-- Text input-->
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="Quantidade Mínima"></label>
-                                                <div class="col-md-12">
-                                                    <input id="quantidadeMínima" name="quantidadeMinima" type="text"
-                                                           placeholder="Quantidade Mínima" class="form-control input-md"
-                                                           required="">
-
-                                                </div>
-                                            </div>
-
-                                            <!-- Text input-->
-                                            <div class="form-group">
                                                 <label class="col-md-4 control-label" for="Validade"></label>
                                                 <div class="col-md-12">
                                                     <label class="col-md-4 control-label"
