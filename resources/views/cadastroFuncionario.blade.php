@@ -246,8 +246,8 @@
                                                                    for="Data">Data nascimento</label>
                                                             <div class="form-check text-capitalize w-100 form-control-lg">
                                                                 <input class="form-check-input" type="checkbox"
-                                                                       id="exampleCheck1" value="on"
-                                                                       name="gerente">
+                                                                       id="Gerente" value="on"
+                                                                       name="Gerente">
                                                                 <label class="form-check-label" for="exampleCheck1">Gerente<br></label>
                                                             </div>
                                                             <button type="submit" class="btn btn-primary my-2">Concluído<br>
