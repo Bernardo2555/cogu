@@ -416,7 +416,7 @@
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text"
                                                                            placeholder="Complemento" value="{{$comp}}"
-                                                                           class="form-control input-md"">
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>

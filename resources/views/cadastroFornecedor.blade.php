@@ -118,7 +118,7 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text" placeholder="Complemento"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
@@ -237,7 +237,7 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text" placeholder="Complemento"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
