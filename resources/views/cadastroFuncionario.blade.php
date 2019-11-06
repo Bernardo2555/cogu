@@ -191,7 +191,7 @@
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text"
                                                                            placeholder="Complemento"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md" >
 
                                                                 </div>
                                                             </div>
@@ -416,8 +416,7 @@
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text"
                                                                            placeholder="Complemento" value="{{$comp}}"
-                                                                           class="form-control input-md"
-                                                                           required="">
+                                                                           class="form-control input-md"">
 
                                                                 </div>
                                                             </div>
