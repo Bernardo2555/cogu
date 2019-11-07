@@ -17,10 +17,11 @@ class StockController extends Controller
     public function index()
     {
         $registros1 = Product::all();
+        $registros2 = InOut::all();
         $registros3 = Provider::all();
 
 
-        return view('estoque', compact('registros1', 'registros3'));
+        return view('estoque', compact('registros1', 'registros2', 'registros3'));
     }
 
     public function salvar(Request $req)

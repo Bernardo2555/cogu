@@ -42,6 +42,7 @@
                                         <th>Produto</th>
                                         <th>Preço<br></th>
                                         <th>Em estoque</th>
+                                        <th>Local Armazenado</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -51,7 +52,9 @@
                                             <td> {{$registro1->valor}}</td>
                                             <td>{{$registro1->quantidadeTotal}}</td>
                                     @endforeach
-
+                                            @foreach($registros2 as $registro2)
+                                                <td>{{$registro2->localArmazenamento}}</td>
+                                                @endforeach
                                         </tr>
                                     </tbody>
                                 </table>
@@ -80,8 +83,8 @@
                                                 <label class="col-md-4 control-label" for="Fornecedor"></label>
                                                 <div class="col-md-12">
                                                     <select id="Fornecedor" name="fornecedorId" class="form-control">
-                                                        @foreach($registros3 as $registro2)
-                                                            <option value='{{$registro2->idFornecedor}}'>{{$registro2->nomeFantasia}}</option>
+                                                        @foreach($registros3 as $registro3)
+                                                            <option value='{{$registro3->idFornecedor}}'>{{$registro3->nomeFantasia}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>

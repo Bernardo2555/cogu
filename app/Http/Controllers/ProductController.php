@@ -20,7 +20,7 @@ class ProductController extends Controller
                 'nome' => $req->input('Nome'),
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
-                'valor' => $req->input('Valor')
+                'valor' => 'R$'.$req->input('Valor')
             );
 
             Product::create($dados);
@@ -38,7 +38,7 @@ class ProductController extends Controller
                 'nome' => $req->input('Nome'),
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
-                'valor' => $req->input('Valor')
+                'valor' => 'R$'.$req->input('Valor')
             );
 
             Product::where('idProduto', $id)->update($att);

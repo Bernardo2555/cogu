@@ -8,6 +8,7 @@ class InOut extends Model
 {
 
     protected $primaryKey = 'idES';
+    protected $table = 'inouts';
 
     public function fornecedor()
     {
