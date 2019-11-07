@@ -89,7 +89,7 @@ class EmployeeController extends Controller
                 $usuario->assignRole('gerente');
             }
 
-            if (!$req->input('Gerente') == 'on' && $usuario->hasRole('gerente')) {
+            if ($req->input('Gerenteoff') == 'off' && $usuario->hasRole('gerente')) {
                 $usuario->removeRole('gerente');
             }
 

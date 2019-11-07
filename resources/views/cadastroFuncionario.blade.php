@@ -106,7 +106,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
                                                                     <input id="email" type="email" class="form-control"
@@ -120,7 +121,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('email_confirmation') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('email_confirmation') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
                                                                     <input id="email-confirm" type="email"
@@ -139,7 +141,8 @@
                                                             <!-- Text input-->
                                                             <div class="form-group">
                                                                 <div class="col-md-12">
-                                                                    <input id="dataNascimentoEnt" name="dataNascimento" type="text"
+                                                                    <input id="dataNascimentoEnt" name="dataNascimento"
+                                                                           type="text"
                                                                            placeholder="Data"
                                                                            class="form-control input-md"
                                                                            required="">
@@ -191,7 +194,7 @@
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text"
                                                                            placeholder="Complemento"
-                                                                           class="form-control input-md" >
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
@@ -208,7 +211,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
                                                                     <input id="password" type="password"
@@ -224,7 +228,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                                                 <div class="col-md-12">
                                                                     <input id="password-confirm" type="password"
                                                                            class="form-control"
@@ -244,7 +249,8 @@
                                                         <td colspan="2">
                                                             <label class="col-md-4 control-label"
                                                                    for="Data">Data nascimento</label>
-                                                            <div class="form-check text-capitalize w-100 form-control-lg">
+                                                            <div
+                                                                class="form-check text-capitalize w-100 form-control-lg">
                                                                 <input class="form-check-input" type="checkbox"
                                                                        id="Gerente" value="on"
                                                                        name="Gerente">
@@ -288,7 +294,7 @@
                                                                        for="RG"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="RGSai" name="RG" type="text"
-                                                                           placeholder="RG" value ="{{$rg}}"
+                                                                           placeholder="RG" value="{{$rg}}"
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -321,10 +327,12 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
-                                                                    <input id="email" type="email" class="form-control" value="{{$email}}"
+                                                                    <input id="email" type="email" class="form-control"
+                                                                           value="{{$email}}"
                                                                            name="Email" placeholder="Email" required>
 
                                                                     @if ($errors->has('email'))
@@ -335,7 +343,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('email_confirmation') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('email_confirmation') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
                                                                     <input id="email-confirm" type="email"
@@ -356,7 +365,8 @@
                                                                 <label class="col-md-4 control-label"
                                                                        for="Data"></label>
                                                                 <div class="col-md-12">
-                                                                    <input id="dataNascimentoSai" name="dataNascimento" type="text"
+                                                                    <input id="dataNascimentoSai" name="dataNascimento"
+                                                                           type="text"
                                                                            placeholder="Data"
                                                                            class="form-control input-md"
                                                                            required="">
@@ -434,7 +444,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
                                                                     <input id="password" type="password"
@@ -450,7 +461,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                                            <div
+                                                                class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                                                 <div class="col-md-12">
                                                                     <input id="password-confirm" type="password"
                                                                            class="form-control"
@@ -468,17 +480,26 @@
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2">
-                                                            <div class="form-check text-capitalize w-100 form-control-lg">
+                                                            <div
+                                                                class="form-check text-capitalize w-100 form-control-lg">
                                                                 <input class="form-check-input" type="checkbox"
-                                                                       id="gerente" value="on"
+                                                                       id="Gerente" value="on"
                                                                        name="Gerente">
                                                                 <label class="form-check-label" for="exampleCheck1">Gerente<br></label>
                                                             </div>
+                                                            <div
+                                                                class="form-check text-capitalize w-100 form-control-lg">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                       id="Gerenteoff" value="off"
+                                                                       name="Gerente">
+                                                                <label class="form-check-label" for="exampleCheck1">Remover
+                                                                    gerente<br></label>
+                                                            </div>
                                                             <button type="submit" class="btn btn-primary my-2">Atualizar<br>
                                                             </button>
-{{--                                                            <button type="submit"--}}
-{{--                                                                    class="btn btn-primary my-2 mx-0 ml-5">Cancelar<br>--}}
-{{--                                                            </button>--}}
+                                                            {{--                                                            <button type="submit"--}}
+                                                            {{--                                                                    class="btn btn-primary my-2 mx-0 ml-5">Cancelar<br>--}}
+                                                            {{--                                                            </button>--}}
                                                         </td>
                                                     </tr>
                                                 </table>
