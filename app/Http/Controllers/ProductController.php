@@ -10,7 +10,11 @@ use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
     public function index(){
-        return view('cadastroProduto');
+
+        $registros1 = Product::all();
+
+
+        return view('cadastroProduto', compact('registros1'));
     }
 
     public function salvar(Request $req)
@@ -35,14 +39,14 @@ class ProductController extends Controller
     {
         try {
             $id = $req->input('produtoId');
-            $att = array(
-                'nome' => $req->input('Nome'),
+            $produtos = array(
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
+                'medida' => $req->input('medida'),
                 'valor' => 'R$'.$req->input('Valor')
             );
 
-            Product::where('idProduto', $id)->update($att);
+            Product::where('idProduto', $id)->update($produtos);
             return redirect()->back()->with('alert-success', 'Produto alterado com sucesso!');
         } catch (\Exception $e){
             return redirect()->back()->with('alert-error', 'Um ou mais campos estão incorretos.');

@@ -21,16 +21,16 @@ Route::post('/estoqueSalvar', 'StockController@salvar')->name('estoque_salvar')-
 Route::post('/estoqueRetira', 'StockController@retira')->name('EstoqueController@retira')->middleware('auth');
 
 Route::get('/cadastrarProduto', 'ProductController@index')->name('cadastroProduto')->middleware('auth');
-Route::post('/cadastrarProduto', 'ProductController@salvar')->name('produto_salvar')->middleware('auth');
-Route::put('/cadastrarProduto', 'ProductController@alterar')->name('produto_alterar')->middleware('auth');
+Route::post('/cadastrarProdutos', 'ProductController@salvar')->name('produto_salvar')->middleware('auth');
+Route::post('/cadastrarProdutoa', 'ProductController@alterar')->name('produto_alterar')->middleware('auth');
 
 Route::get('/cadastroFornecedor', 'ProviderController@index')->name('cadastroFornecedor')->middleware('auth');
-Route::post('/cadastroFornecedor', 'ProviderController@salvar')->name('fornecedor_salvar')->middleware('auth');
-Route::put('/cadastroFornecedor', 'ProviderController@alterar')->name('fornecedor_alterar')->middleware('auth');
+Route::post('/cadastroFornecedors', 'ProviderController@salvar')->name('fornecedor_salvar')->middleware('auth');
+Route::post('/cadastroFornecedora', 'ProviderController@alterar')->name('fornecedor_alterar')->middleware('auth');
 
 Route::get('/cadastroFuncionario', 'EmployeeController@index')->name('cadastroFuncionario')->middleware(['role:gerente']);
-Route::post('/cadastroFuncionario', 'EmployeeController@salvar')->name('funcionario_salvar')->middleware('auth');
-Route::put('/cadastroFuncionario', 'EmployeeController@atualizar')->name('funcionario_atualizar')->middleware('auth');
+Route::post('/cadastroFuncionarios', 'EmployeeController@salvar')->name('funcionario_salvar')->middleware('auth');
+Route::post('/cadastroFuncionarioa', 'EmployeeController@atualizar')->name('funcionario_atualizar')->middleware('auth');
 
 Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset.token')->middleware('auth');
 

@@ -113,20 +113,21 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane fade" id="tabtwo" role="tabpanel">
-                                            <form action="{{route('produto_alterar')}}" method="put">
+                                            <form action="{{route('produto_alterar')}}" method="post">
                                                 {!! csrf_field() !!}
                                                 <table>
                                                     <tr>
                                                         <td>
-                                                            <!-- Text input-->
+                                                            <!-- Select Basic -->
                                                             <div class="form-group">
-                                                                <label class="col-md-4 control-label"
-                                                                       for="Nome"></label>
+                                                                <label class="col-md-4 control-label" for="Produto"></label>
                                                                 <div class="col-md-12">
-                                                                    <input id="ID do protudo" name="produtoId" type="number"
-                                                                           placeholder="ID do protudo"
-                                                                           class="form-control input-md" required="">
-
+                                                                    <select id="produtoId" name="produtoId" class="form-control">
+                                                                        @foreach($registros1 as $registro)
+                                                                            <option
+                                                                                value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
+                                                                        @endforeach
+                                                                    </select>
                                                                 </div>
                                                             </div>
 
@@ -136,7 +137,7 @@
                                                                        for="Valor"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="valorSai"
-                                                                           name="valor" type="text"
+                                                                           name="Valor" type="text"
                                                                            placeholder="Valor"
                                                                            class="form-control input-md" required="">
 
@@ -144,18 +145,6 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <!-- Text input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-4 control-label"
-                                                                       for="Nome"></label>
-                                                                <div class="col-md-12">
-                                                                    <input id="Nome" name="Nome" type="text"
-                                                                           placeholder="Nome"
-                                                                           class="form-control input-md" required="">
-
-                                                                </div>
-                                                            </div>
-
                                                             <!-- Text input-->
                                                             <div class="form-group">
                                                                 <label class="col-md-4 control-label"
@@ -167,6 +156,20 @@
                                                                            placeholder="Quantidade mínima"
                                                                            class="form-control input-md" required="">
 
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Select Basic -->
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label" for="selectbasic">Medida</label>
+                                                                <div class="col-md-12">
+                                                                    <select id="medida" name="medida" class="form-control">
+                                                                        <option value="g">g</option>
+                                                                        <option value="kg">kg</option>
+                                                                        <option value="ml">ml</option>
+                                                                        <option value="L">L</option>
+                                                                        <option value="uni.">uni.</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </td>

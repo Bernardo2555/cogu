@@ -54,7 +54,7 @@
                                             <td>
                                                 @foreach($registros2 as $registro2)
                                                     @if($registro2->produtoId == $registro1->idProduto)
-                                                        {{$registro2->localArmazenamento}}
+                                                        {{$registro2->localArmazenamento.','}}
                                                     @endif
                                                 @endforeach
                                             </td>
@@ -74,7 +74,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="Produto"></label>
                                                 <div class="col-md-12">
-                                                    <select id="Produto" name="produtoId" class="form-control">
+                                                    <select id="produtoId" name="produtoId" class="form-control">
                                                         @foreach($registros1 as $registro)
                                                             <option
                                                                 value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
