@@ -20,7 +20,7 @@ class CreateInoutsTable extends Migration
             $table->unsignedBigInteger('funcionarioId')->unsined();
             $table->foreign('funcionarioId')->references('idUsuario')->on('users');
             $table->string('validade')->nullable();
-            $table->string('quantidade', 10, 0)->nullable();
+            $table->string('quantidade')->nullable();
             $table->string('dataColheita')->nullable();
             $table->string('dataES')->nullable();
             $table->string('tipo', 10)->nullable();

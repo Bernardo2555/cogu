@@ -20,6 +20,7 @@ class ProductController extends Controller
                 'nome' => $req->input('Nome'),
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
+                'medida' => $req->input('medida'),
                 'valor' => 'R$'.$req->input('Valor')
             );
 

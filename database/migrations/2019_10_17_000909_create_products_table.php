@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('nome', 50)->nullable();
             $table->string('quantidadeMinima', 10, 0)->nullable();
             $table->string('quantidadeTotal')->nullable();
+            $table->string('medida')->nullable();
             $table->string('valor', 10, 0)->nullable();
         });
     }

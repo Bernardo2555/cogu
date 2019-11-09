@@ -16,6 +16,7 @@ class Product extends Model
         'nome',
         'quantidadeMinima',
         'quantidadeTotal',
+        'medida',
         'valor'
     ];
 }

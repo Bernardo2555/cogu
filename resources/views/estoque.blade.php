@@ -28,8 +28,8 @@
                                                 data-target="#tabone">Estoque</a></li>
                         <li class="nav-item" style=""><a class="nav-link" href="" data-toggle="tab"
                                                          data-target="#tabtwo">Entrada</a></li>
-{{--                        <li class="nav-item"><a href="" class="nav-link" data-toggle="tab" data-target="#tabthree">Venda<br></a>--}}
-{{--                        </li>--}}
+                        {{--                        <li class="nav-item"><a href="" class="nav-link" data-toggle="tab" data-target="#tabthree">Venda<br></a>--}}
+                        {{--                        </li>--}}
                         <li class="nav-item"><a href="" class="nav-link" data-toggle="tab"
                                                 data-target="#tabfour">Saída<br></a></li>
                     </ul>
@@ -50,11 +50,15 @@
                                         <tr>
                                             <th scope="row">{{$registro1->nome}}</th>
                                             <td> {{$registro1->valor}}</td>
-                                            <td>{{$registro1->quantidadeTotal}}</td>
-                                    @endforeach
-                                            @foreach($registros2 as $registro2)
-                                                <td>{{$registro2->localArmazenamento}}</td>
+                                            <td>{{$registro1->quantidadeTotal.' '.$registro1->medida}}</td>
+                                            <td>
+                                                @foreach($registros2 as $registro2)
+                                                    @if($registro2->produtoId == $registro1->idProduto)
+                                                        {{$registro2->localArmazenamento}}
+                                                    @endif
                                                 @endforeach
+                                            </td>
+                                            @endforeach
                                         </tr>
                                     </tbody>
                                 </table>
@@ -72,7 +76,8 @@
                                                 <div class="col-md-12">
                                                     <select id="Produto" name="produtoId" class="form-control">
                                                         @foreach($registros1 as $registro)
-                                                            <option value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
+                                                            <option
+                                                                value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -84,7 +89,8 @@
                                                 <div class="col-md-12">
                                                     <select id="Fornecedor" name="fornecedorId" class="form-control">
                                                         @foreach($registros3 as $registro3)
-                                                            <option value='{{$registro3->idFornecedor}}'>{{$registro3->nomeFantasia}}</option>
+                                                            <option
+                                                                value='{{$registro3->idFornecedor}}'>{{$registro3->nomeFantasia}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -114,16 +120,6 @@
 
                                                 </div>
                                             </div>
-
-{{--                                            <!-- Text input-->--}}
-{{--                                            <div class="form-group">--}}
-{{--                                                <label class="col-md-4 control-label" for="Valor"></label>--}}
-{{--                                                <div class="col-md-12">--}}
-{{--                                                    <input id="Valor" name="valor" type="number" placeholder="Valor"--}}
-{{--                                                           class="form-control input-md" required="">--}}
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
 
                                             <!-- Text input-->
                                             <div class="form-group">
@@ -158,10 +154,10 @@
                                                 <button type="submit" class="btn btn-primary my-2">
                                                     Concluído<br>
                                                 </button>
-{{--                                                <button type="submit"--}}
-{{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
-{{--                                                    Cancelar<br>--}}
-{{--                                                </button>--}}
+                                                {{--                                                <button type="submit"--}}
+                                                {{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
+                                                {{--                                                    Cancelar<br>--}}
+                                                {{--                                                </button>--}}
                                             </div>
                                         </td>
                                     </tr>
@@ -225,10 +221,10 @@
                                                 <button type="submit" class="btn btn-primary my-2">
                                                     Concluído<br>
                                                 </button>
-{{--                                                <button type="submit"--}}
-{{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
-{{--                                                    Cancelar<br>--}}
-{{--                                                </button>--}}
+                                                {{--                                                <button type="submit"--}}
+                                                {{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
+                                                {{--                                                    Cancelar<br>--}}
+                                                {{--                                                </button>--}}
                                             </div>
                                         </td>
                                     </tr>
@@ -247,7 +243,8 @@
                                                 <div class="col-md-12">
                                                     <select id="Produto" name="produtoId" class="form-control">
                                                         @foreach($registros1 as $registro)
-                                                            <option value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
+                                                            <option
+                                                                value='{{$registro->idProduto}}'>{{$registro->nome}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -272,10 +269,10 @@
                                                 <button type="submit" class="btn btn-primary my-2">
                                                     Concluído<br>
                                                 </button>
-{{--                                                <button type="submit"--}}
-{{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
-{{--                                                    Cancelar<br>--}}
-{{--                                                </button>--}}
+                                                {{--                                                <button type="submit"--}}
+                                                {{--                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
+                                                {{--                                                    Cancelar<br>--}}
+                                                {{--                                                </button>--}}
                                             </div>
                                         </td>
                                     </tr>

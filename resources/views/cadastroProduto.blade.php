@@ -80,6 +80,20 @@
 
                                                                 </div>
                                                             </div>
+
+                                                            <!-- Select Basic -->
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label" for="selectbasic">Medida</label>
+                                                                <div class="col-md-12">
+                                                                    <select id="medida" name="medida" class="form-control">
+                                                                        <option value="g">g</option>
+                                                                        <option value="kg">kg</option>
+                                                                        <option value="ml">ml</option>
+                                                                        <option value="L">L</option>
+                                                                        <option value="uni.">uni.</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
