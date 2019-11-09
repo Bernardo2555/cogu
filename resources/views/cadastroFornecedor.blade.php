@@ -95,7 +95,7 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Nome do Vendedor" name="nomeDoVendedor"
                                                                            type="text" placeholder="Nome do Vendedor"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md">
 
                                                                 </div>
                                                             </div>
@@ -138,14 +138,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2">
-                                                            <div class="form-check text-capitalize w-100 form-control-lg">
+                                                            <div
+                                                                class="form-check text-capitalize w-100 form-control-lg">
                                                                 <button type="submit" class="btn btn-primary my-2">
                                                                     Concluído<br>
                                                                 </button>
-{{--                                                                <button type="submit"--}}
-{{--                                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
-{{--                                                                    Cancelar<br>--}}
-{{--                                                                </button>--}}
+                                                                {{--                                                                <button type="submit"--}}
+                                                                {{--                                                                        class="btn btn-primary my-2 mx-0 ml-5">--}}
+                                                                {{--                                                                    Cancelar<br>--}}
+                                                                {{--                                                                </button>--}}
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -159,14 +160,18 @@
                                                     <tr>
                                                         <td>
 
-                                                            <!-- Text input-->
+                                                            <!-- Select Basic -->
                                                             <div class="form-group">
                                                                 <label class="col-md-4 control-label"
-                                                                       for="CNPJ"></label>
+                                                                       for="Produto"></label>
                                                                 <div class="col-md-12">
-                                                                    <input id="CNPJSai" name="CNPJ" type="text"
-                                                                           placeholder="CNPJ"
-                                                                           class="form-control input-md" required="">
+                                                                    <select id="produtoId" name="produtoId"
+                                                                            class="form-control">
+                                                                        @foreach($registros as $registro)
+                                                                            <option
+                                                                                value='{{$registro->idFornecedor}}'>{{$registro->nomeFantasia}}</option>
+                                                                        @endforeach
+                                                                    </select>
                                                                 </div>
                                                             </div>
 
@@ -176,6 +181,18 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Nome do Vendedor" name="Nome do Vendedor"
                                                                            type="text" placeholder="Nome do Vendedor"
+                                                                           class="form-control input-md"
+                                                                    >
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label"
+                                                                       for="Nome do Vendedor"></label>
+                                                                <div class="col-md-12">
+                                                                    <input id="CNPJSai" name="CNPJ"
+                                                                           type="text" placeholder="CNPJ"
                                                                            class="form-control input-md" required="">
 
                                                                 </div>
@@ -188,11 +205,13 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Endereço" name="Endereço" type="text"
                                                                            placeholder="Endereço"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md" required=""
+                                                                    >
 
                                                                 </div>
                                                             </div>
-
+                                                        </td>
+                                                        <td>
                                                             <!-- Text input-->
                                                             <div class="form-group">
                                                                 <label class="col-md-4 control-label"
@@ -200,56 +219,48 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Número" name="Número" type="number"
                                                                            placeholder="Número"
-                                                                           class="form-control input-md">
+                                                                           class="form-control input-md"
+                                                                    >
 
                                                                 </div>
                                                             </div>
-                                                        </td>
-                                                        <td>
 
                                                             <!-- Text input-->
-                                                            <div class="form-group">
+                                                            <div class=" form-group">
                                                                 <label class="col-md-4 control-label"
-                                                                       for="Nome da empresa"></label>
-                                                                <div class="col-md-12">
-                                                                    <input id="Nome da empresa" name="Nome da empresa"
-                                                                           type="text" placeholder="Nome da empresa"
-                                                                           class="form-control input-md" required="">
-
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Text input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-4 control-label" for="CEP"></label>
+                                                                       for="CEP"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="CEPSai" name="CEP" type="text"
                                                                            placeholder="CEP"
-                                                                           class="form-control input-md" required="">
-
+                                                                           class="form-control input-md" required=""
+                                                                    >
                                                                 </div>
                                                             </div>
 
                                                             <!-- Text input-->
-                                                            <div class="form-group">
+                                                            <div class=" form-group">
                                                                 <label class="col-md-4 control-label"
                                                                        for="Complemento"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text" placeholder="Complemento"
-                                                                           class="form-control input-md">
+                                                                           class="form-control input-md"
+                                                                    >
 
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Text input-->
+                                                        <!-- Text input-->
                                                             <div class="form-group">
                                                                 <label class="col-md-4 control-label"
                                                                        for="Telefone"></label>
                                                                 <div class="col-md-12">
-                                                                    <input id="TelefoneSai" name="Telefone" type="text"
+                                                                    <input id="TelefoneSai" name="Telefone"
+                                                                           type="text"
                                                                            placeholder="Telefone"
-                                                                           class="form-control input-md" required="">
+                                                                           class="form-control input-md"
+                                                                           required=""
+                                                                    >
 
                                                                 </div>
                                                             </div>
@@ -257,7 +268,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2">
-                                                            <div class="form-check text-capitalize w-100 form-control-lg">
+                                                            <div
+                                                                class="form-check text-capitalize w-100 form-control-lg">
                                                                 <button type="submit" class="btn btn-primary my-2">
                                                                     Concluído<br>
                                                                 </button>

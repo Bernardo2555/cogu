@@ -12,7 +12,11 @@ class ProviderController extends Controller
 {
 
     public function index(){
-        return view('cadastroFornecedor');
+
+        $registros = Provider::all();
+        $registros1 = Address::all();
+
+        return view('cadastroFornecedor', compact('registros', 'registros1'));
     }
 
     public function salvar(Request $req)
