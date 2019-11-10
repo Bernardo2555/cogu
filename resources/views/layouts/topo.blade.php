@@ -72,9 +72,7 @@
                                    aria-haspopup="true" aria-expanded="false">Cadastro</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{route('cadastroFornecedor')}}">Fornecedor</a>
-                                    @hasrole('gerente')
                                     <a class="dropdown-item" href="{{route('cadastroFuncionario')}}">Funcionário</a>
-                                    @endhasrole
                                     <a class="dropdown-item" href="{{route('cadastroProduto')}}">Produto</a></div>
                             </li>
                             {{--                            @hasrole('gerente')--}}

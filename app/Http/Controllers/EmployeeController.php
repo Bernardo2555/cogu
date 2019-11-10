@@ -11,7 +11,9 @@ class EmployeeController extends Controller
 {
 
     public function index(){
-        return view('cadastroFuncionario');
+        $registros = Address::all();
+
+        return view('cadastroFuncionario', compact('registros'));
     }
 
     public function salvar(Request $req)
@@ -58,9 +60,7 @@ class EmployeeController extends Controller
     {
 
         try {
-
-            $ide = $req->input('enderecoId');
-            $idu = $req->input('idUsuario');
+            $idu = $req->input('CPF');
 
             $endereco = [
                 'rua' => $req->input('Endereco'),
@@ -68,22 +68,19 @@ class EmployeeController extends Controller
                 'complemento' => $req->input('Complemento'),
                 'numero' => $req->input('Numero')
             ];
-            Address::where('idEndereco', $ide)->update($endereco);
-
+            $endereco = Address::create($endereco);
+            $endereco->save();
 
             $dados = array(
-                'idUsuario' => $idu,
                 'nome' => $req->input('Nome'),
                 'dataNascimento' => $req->input('dataNascimento'),
                 'RG' => $req->input('RG'),
-                'CPF' => $req->input('CPF'),
                 'email' => $req->input('Email'),
                 'password' => Hash::make($req->input('Senha')),
-                'telefone' => $req->input('Telefone'),
-                'enderecoId' => $ide
-
+                'telefone' => $req->input('Telefone')
             );
-            $usuario = User::where('idUsuario', $idu)->update($dados);
+
+            $usuario = User::where('CPF', $idu)->update($dados);
 
             if ($req->input('Gerente') == 'on' && !$usuario->hasRole('gerente')) {
                 $usuario->assignRole('gerente');

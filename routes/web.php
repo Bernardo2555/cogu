@@ -28,7 +28,7 @@ Route::get('/cadastroFornecedor', 'ProviderController@index')->name('cadastroFor
 Route::post('/cadastroFornecedors', 'ProviderController@salvar')->name('fornecedor_salvar')->middleware('auth');
 Route::post('/cadastroFornecedora', 'ProviderController@alterar')->name('fornecedor_alterar')->middleware('auth');
 
-Route::get('/cadastroFuncionario', 'EmployeeController@index')->name('cadastroFuncionario')->middleware(['role:gerente']);
+Route::get('/cadastroFuncionario', 'EmployeeController@index')->name('cadastroFuncionario')->middleware('auth');
 Route::post('/cadastroFuncionarios', 'EmployeeController@salvar')->name('funcionario_salvar')->middleware('auth');
 Route::post('/cadastroFuncionarioa', 'EmployeeController@atualizar')->name('funcionario_atualizar')->middleware('auth');
 

@@ -40,9 +40,10 @@
                                     <thead>
                                     <tr>
                                         <th>Produto</th>
-                                        <th>Preço<br></th>
+                                        <th>Preço</th>
                                         <th>Em estoque</th>
                                         <th>Local Armazenado</th>
+{{--                                        <th>Fornecedor</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -57,6 +58,9 @@
                                                         {{$registro2->localArmazenamento.','}}
                                                     @endif
                                                 @endforeach
+                                            </td>
+                                            <td>
+
                                             </td>
                                             @endforeach
                                         </tr>

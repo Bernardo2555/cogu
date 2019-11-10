@@ -4,22 +4,6 @@
 
 @section('conteudo')
 
-    <?php $func = \Illuminate\Support\Facades\Auth::user()->idUsuario;
-    $nome = \Illuminate\Support\Facades\Auth::user()->nome;
-    $end = \Illuminate\Support\Facades\Auth::user()->enderecoId;
-    $tel = \Illuminate\Support\Facades\Auth::user()->telefone;
-    $cpf = \Illuminate\Support\Facades\Auth::user()->CPF;
-    $rg = \Illuminate\Support\Facades\Auth::user()->RG;
-    $email = \Illuminate\Support\Facades\Auth::user()->email;
-
-    $ende = \App\Address::find($end);
-    $rua = $ende->rua;
-    $cep = $ende->CEP;
-    $comp = $ende->complemento;
-    $num = $ende->numero;
-
-    ?>
-
     <div class="py-5 text-center" style="">
         <div class="container">
             <div class="row">
@@ -45,13 +29,15 @@
                             <div class="row">
                                 <div class="col-md-12 ml-5 pl-5" style="">
                                     <ul class="nav nav-tabs ml-0" style="">
+                                        @hasrole('gerente')
                                         <li class="nav-item"><a href="" class="active nav-link" data-toggle="tab"
                                                                 data-target="#tabone">Cadastrar<br></a></li>
+                                        @endhasrole
                                         <li class="nav-item"><a class="nav-link" href="" data-toggle="tab"
                                                                 data-target="#tabtwo">Alterar<br></a></li>
                                     </ul>
                                     <div class="tab-content mt-2">
-
+                                        @hasrole('gerente')
                                         <div class="tab-pane fade show active" id="tabone" role="tabpanel">
                                             <form method="post" action="{{route('funcionario_salvar')}}">
                                                 {!! csrf_field() !!}
@@ -266,12 +252,13 @@
                                                 </table>
                                             </form>
                                         </div>
+                                        @endhasrole
                                         <div class="tab-pane fade" id="tabtwo" role="tabpanel">
-                                            <form method="put" action="{{route('funcionario_atualizar')}}">
+                                            <form method="post" action="{{route('funcionario_atualizar')}}">
                                                 {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="put">
-                                                <input type="hidden" name="idUsuario" value="{{$func}}">
-                                                <input type="hidden" name="enderecoId" value="{{$end}}">
+                                                {{--                                                <input type="hidden" name="_method" value="put">--}}
+                                                {{--                                                <input type="hidden" name="idUsuario" value="{{$func}}">--}}
+                                                {{--                                                <input type="hidden" name="enderecoId" value="{{$end}}">--}}
                                                 <table>
                                                     <tr>
                                                         <td>
@@ -281,7 +268,8 @@
                                                                        for="CPF"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="CPFSai" name="CPF" type="text"
-                                                                           placeholder="CPF" value="{{$cpf}}"
+                                                                           placeholder="CPF"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->CPF}}"
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -294,7 +282,8 @@
                                                                        for="RG"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="RGSai" name="RG" type="text"
-                                                                           placeholder="RG" value="{{$rg}}"
+                                                                           placeholder="RG"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->RG}}"
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -307,7 +296,12 @@
                                                                        for="Endereço"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="Endereco" name="Endereco" type="text"
-                                                                           placeholder="Endereço" value="{{$rua}}"
+                                                                           placeholder="Endereço"
+                                                                           @foreach($registros as $registro)
+                                                                           @if(\Illuminate\Support\Facades\Auth::user()->enderecoId == $registro->idEndereco)
+                                                                           value="{{$registro->rua}}"
+                                                                           @endif
+                                                                           @endforeach
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -320,7 +314,12 @@
                                                                        for="Número"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="Numero" name="Numero" type="number"
-                                                                           placeholder="Número" value="{{$num}}"
+                                                                           placeholder="Número"
+                                                                           @foreach($registros as $registro)
+                                                                           @if(\Illuminate\Support\Facades\Auth::user()->enderecoId == $registro->idEndereco)
+                                                                           value="{{$registro->numero}}"
+                                                                           @endif
+                                                                           @endforeach
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -332,7 +331,7 @@
 
                                                                 <div class="col-md-12">
                                                                     <input id="email" type="email" class="form-control"
-                                                                           value="{{$email}}"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->email}}"
                                                                            name="Email" placeholder="Email" required>
 
                                                                     @if ($errors->has('email'))
@@ -349,7 +348,8 @@
                                                                 <div class="col-md-12">
                                                                     <input id="email-confirm" type="email"
                                                                            class="form-control"
-                                                                           name="email_confirmation" value="{{$email}}"
+                                                                           name="email_confirmation"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->email}}"
                                                                            placeholder="Confirme o Email" required>
 
                                                                     @if ($errors->has('email_confirmation'))
@@ -369,7 +369,9 @@
                                                                            type="text"
                                                                            placeholder="Data"
                                                                            class="form-control input-md"
-                                                                           required="">
+                                                                           required=""
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->dataNascimento}}"
+                                                                    >
 
                                                                 </div>
                                                             </div>
@@ -383,7 +385,8 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Nome" name="Nome"
                                                                            type="text"
-                                                                           placeholder="Nome" value="{{$nome}}"
+                                                                           placeholder="Nome"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->nome}}"
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -391,27 +394,17 @@
                                                             </div>
 
                                                             <!-- Text input-->
-                                                            <!--  <div class="form-group">
-                                                                  <label class="col-md-4 control-label"
-                                                                         for="Último nome"></label>
-                                                                  <div class="col-md-12">
-                                                                      <input id="ultimoNome" name="ultimoNome"
-                                                                             type="text"
-                                                                             placeholder="Último nome"
-                                                                             class="form-control input-md"
-                                                                             required="">
-
-                                                                  </div>
-                                                              </div>-->
-
-
-                                                            <!-- Text input-->
                                                             <div class="form-group">
                                                                 <label class="col-md-4 control-label"
                                                                        for="CEP"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="CEPSai" name="CEP" type="text"
-                                                                           placeholder="CEP" value="{{$cep}}"
+                                                                           placeholder="CEP"
+                                                                           @foreach($registros as $registro)
+                                                                           @if(\Illuminate\Support\Facades\Auth::user()->enderecoId == $registro->idEndereco)
+                                                                           value="{{$registro->CEP}}"
+                                                                           @endif
+                                                                           @endforeach
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -425,7 +418,12 @@
                                                                 <div class="col-md-12">
                                                                     <input id="Complemento" name="Complemento"
                                                                            type="text"
-                                                                           placeholder="Complemento" value="{{$comp}}"
+                                                                           placeholder="Complemento"
+                                                                           @foreach($registros as $registro)
+                                                                           @if(\Illuminate\Support\Facades\Auth::user()->enderecoId == $registro->idEndereco)
+                                                                           value="{{$registro->complemento}}"
+                                                                           @endif
+                                                                           @endforeach
                                                                            class="form-control input-md">
 
                                                                 </div>
@@ -437,7 +435,8 @@
                                                                        for="Telefone"></label>
                                                                 <div class="col-md-12">
                                                                     <input id="TelefoneSai" name="Telefone" type="text"
-                                                                           placeholder="Telefone" value="{{$tel}}"
+                                                                           placeholder="Telefone"
+                                                                           value="{{\Illuminate\Support\Facades\Auth::user()->telefone}}"
                                                                            class="form-control input-md"
                                                                            required="">
 
@@ -448,30 +447,30 @@
                                                                 class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                                                                 <div class="col-md-12">
-                                                                    <input id="password" type="password"
-                                                                           class="form-control" name="password"
+                                                                    <input id="Senha" type="password"
+                                                                           class="form-control" name="Senha"
                                                                            placeholder="Senha"
                                                                            required>
 
-                                                                    @if ($errors->has('password'))
+                                                                    @if ($errors->has('Senha'))
                                                                         <span class="help-block">
-                                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                                            <strong>{{ $errors->first('Senha') }}</strong>
                                                                         </span>
                                                                     @endif
                                                                 </div>
                                                             </div>
 
                                                             <div
-                                                                class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                                                class="form-group{{ $errors->has('Senha') ? ' has-error' : '' }}">
                                                                 <div class="col-md-12">
-                                                                    <input id="password-confirm" type="password"
+                                                                    <input id="Senha" type="password"
                                                                            class="form-control"
-                                                                           name="password_confirmation"
+                                                                           name="Senha"
                                                                            placeholder="Confirme a Senha" required>
 
-                                                                    @if ($errors->has('password_confirmation'))
+                                                                    @if ($errors->has('Senha'))
                                                                         <span class="help-block">
-                                                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                                            <strong>{{ $errors->first('Senha') }}</strong>
                                                                          </span>
                                                                     @endif
                                                                 </div>
@@ -480,6 +479,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td colspan="2">
+                                                            @hasrole('gerente')
                                                             <div
                                                                 class="form-check text-capitalize w-100 form-control-lg">
                                                                 <input class="form-check-input" type="checkbox"
@@ -495,6 +495,7 @@
                                                                 <label class="form-check-label" for="exampleCheck1">Remover
                                                                     gerente<br></label>
                                                             </div>
+                                                            @endhasrole
                                                             <button type="submit" class="btn btn-primary my-2">Atualizar<br>
                                                             </button>
                                                             {{--                                                            <button type="submit"--}}

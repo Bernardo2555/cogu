@@ -51,13 +51,10 @@ class StockController extends Controller
                 'funcionarioId' => Auth::user()->idUsuario
             );
 
-
             $idES = InOut::create($dados);
             $idES->save();
 
-            $fornecedor = Provider::find($req->input('fornecedorId'));
-
-            $fornecedor->entradaSaidas()->attach($idES);
+            OutboundSupplier::Fornecedorentradasaida()->attach($req->input('fornecedorId'), $idES->idES);
 
             return redirect()->back()->with('alert-success', 'Inserido no estoque com sucesso!');
         } catch (\Exception $e) {
