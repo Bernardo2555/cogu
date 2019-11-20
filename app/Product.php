@@ -9,6 +9,11 @@ class Product extends Model
 
     protected $primarykey = 'idProduto';
 
+    public function itemVendas()
+    {
+        return $this->belongsToMany('App\itemSale', 'item_sales');
+    }
+
     public $timestamps = false;
 
     protected $fillable = [
