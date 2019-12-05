@@ -94,6 +94,18 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label"
+                                                                       for="localArmazenamento"></label>
+                                                                <div class="col-md-12">
+                                                                    <input id="localArmazenamento"
+                                                                           name="localArmazenamento"
+                                                                           type="text"
+                                                                           placeholder="Local Armazenamento"
+                                                                           class="form-control input-md" required="">
+
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -170,6 +182,18 @@
                                                                         <option value="L">L</option>
                                                                         <option value="uni.">uni.</option>
                                                                     </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-md-4 control-label"
+                                                                       for="localArmazenamento"></label>
+                                                                <div class="col-md-12">
+                                                                    <input id="localArmazenamento"
+                                                                           name="localArmazenamento"
+                                                                           type="text"
+                                                                           placeholder="Local Armazenamento"
+                                                                           class="form-control input-md" required="">
+
                                                                 </div>
                                                             </div>
                                                         </td>

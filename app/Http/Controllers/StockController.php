@@ -45,7 +45,6 @@ class StockController extends Controller
                 'dataColheita' => $req->input('dataColheita'),
                 'dataES' => Carbon::now(),
                 'tipo' => 'entrada',
-                'localArmazenamento' => $req->input('localArmazenamento'),
                 'dataDesidratado' => null,
                 'lote' => null,
                 'funcionarioId' => Auth::user()->idUsuario

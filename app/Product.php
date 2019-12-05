@@ -22,6 +22,7 @@ class Product extends Model
         'quantidadeMinima',
         'quantidadeTotal',
         'medida',
-        'valor'
+        'valor',
+        'localArmazenamento'
     ];
 }
