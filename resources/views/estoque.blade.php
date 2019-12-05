@@ -53,11 +53,7 @@
                                             <td> {{$registro1->valor}}</td>
                                             <td>{{$registro1->quantidadeTotal.' '.$registro1->medida}}</td>
                                             <td>
-                                                @foreach($registros2 as $registro2)
-                                                    @if($registro2->produtoId == $registro1->idProduto)
-                                                        {{$registro2->localArmazenamento.','}}
-                                                    @endif
-                                                @endforeach
+                                                {{$registro1->localArmazenamento}}
                                             </td>
                                             <td>
 
@@ -126,17 +122,7 @@
                                             </div>
 
                                             <!-- Text input-->
-                                            <div class="form-group">
-                                                <label class="col-md-4 control-label" for="Local Armazenamento"></label>
-                                                <div class="col-md-12">
-                                                    <input id="Local Armazenamento" name="localArmazenamento"
-                                                           type="text"
-                                                           placeholder="Local Armazenamento"
-                                                           class="form-control input-md"
-                                                           required="">
 
-                                                </div>
-                                            </div>
 
                                             <!-- Text input-->
                                             <div class="form-group">

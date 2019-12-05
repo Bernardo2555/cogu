@@ -25,7 +25,8 @@ class ProductController extends Controller
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
                 'medida' => $req->input('medida'),
-                'valor' => 'R$'.$req->input('Valor')
+                'valor' => 'R$'.$req->input('Valor'),
+                'localArmazenamento' => $req->input('localArmazenamento')
             );
 
             Product::create($dados);
@@ -43,7 +44,8 @@ class ProductController extends Controller
                 'quantidadeMinima' => $req->input('quantidadeMinima'),
                 'quantidadeTotal' => 0.0,
                 'medida' => $req->input('medida'),
-                'valor' => 'R$'.$req->input('Valor')
+                'valor' => 'R$'.$req->input('Valor'),
+                'localArmazenamento' => $req->input('localArmazenamento')
             );
 
             Product::where('idProduto', $id)->update($produtos);
