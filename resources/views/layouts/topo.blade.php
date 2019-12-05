@@ -32,8 +32,8 @@
             $('#dataNascimentoSai').mask('00/00/0000');
             $('#Validade').mask('00/00/0000');
             $('#dataColheita').mask('00/00/0000');
-            $('#RGEnt').mask('00.000.000');
-            $('#RGSai').mask('00.000.000');
+            $('#RGEnt').mask('00.000.000-0');
+            $('#RGSai').mask('00.000.000-0');
             $('#CPFEnt').mask('000.000.000-00');
             $('#CPFSai').mask('000.000.000-00');
             $('#CEPEnt').mask('00.000-000');
