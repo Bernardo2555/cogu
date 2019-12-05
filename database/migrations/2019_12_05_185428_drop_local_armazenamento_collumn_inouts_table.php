@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropLocalArmazenamentoColumnToProductsTable extends Migration
+class DropLocalArmazenamentoCollumnInoutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class DropLocalArmazenamentoColumnToProductsTable extends Migration
     public function up()
     {
         Schema::table('inouts', function (Blueprint $table) {
-            $table->string('localArmazenamento')->nullable();
+            $table->dropColumn('localArmazenamento')->nullable();
         });
     }
 
@@ -25,8 +25,6 @@ class DropLocalArmazenamentoColumnToProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }
